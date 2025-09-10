@@ -1,0 +1,66 @@
+Docker là gì?
+Docker là một nền tảng sử dụng công nghệ containerization để đóng gói ứng dụng cùng toàn bộ thư viện, cấu hình, dependencies… vào trong một môi trường riêng biệt gọi là container.
+Nhờ vậy, ứng dụng chạy đồng nhất ở mọi nơi (local, server, cloud) mà không lo lỗi môi trường.
+Các khái niệm liên quan:
+Containerization (Đóng gói container):
+Tạo container chia sẻ chung kernel host.
+Nhẹ, khởi chạy nhanh, dễ port và scale.
+Virtualization (Ảo hóa)
+Tạo máy ảo (VM) với hệ điều hành riêng.
+Cách ly tốt, nhưng nặng, tốn tài nguyên.
+
+Docker-compose là gì?
+Docker Compose là công cụ đi kèm Docker giúp bạn chạy nhiều container cùng lúc bằng cách khai báo trong một file docker-compose.yml.
+
+Linux VS Unix VS BSD hay *nix ? macos thuộc loại nào?
+Unix: Là hệ điều hành chuẩn gốc, sau này có nhiều biến thể (System V, BSD...).
+Linux: Kernel do Linus Torvalds phát triển, không phải Unix, nhưng giống Unix
+BSD (Berkeley Software Distribution): Xuất phát từ Unix gốc
+macOS: Thuộc họ Unix (chính xác hơn: Unix certified).
+
+Alpine VS Ubuntu?
+Khái niệm liên quan:
+Docker host: Docker Host chính là máy tính hoặc hệ điều hành nơi Docker Engine chạy. Nói cách khác: Docker Host = nền tảng chạy tất cả container.
+Base Image: hình ảnh gốc (Docker image) được dùng làm nền tảng ban đầu để xây dựng một Docker image khác.
+Khác nhau: Host = kernel còn Base Image = userspace.
+Container chạy trên kernel của host, nhưng dùng userspace từ base image.
+
+Alpine Linux
+Đặc điểm chính:
+Rất nhẹ (chỉ ~5MB cho base image).
+Tối ưu cho container: nhanh, bảo mật cao, ít chiếm tài nguyên.
+Ưu điểm:
+Siêu nhỏ → image Docker build ra rất nhẹ.
+Khởi động nhanh, ít tốn RAM/CPU.
+Bảo mật: update thường xuyên, bề mặt tấn công nhỏ.
+Nhược điểm:
+Không đầy đủ thư viện như Ubuntu → dễ gặp lỗi khi build app phức tạp.
+
+Ubuntu
+Đặc điểm chính:
+Dựa trên Debian, phổ biến nhất thế giới Linux server.
+Base image ~29MB (lớn hơn Alpine).
+Đầy đủ package.
+Ưu điểm:
+Thân thiện, dễ dùng, cộng đồng lớn.
+Nhiều package sẵn có, dễ cài đặt.
+Tương thích gần như toàn bộ ứng dụng.
+Dễ debug, quen thuộc cho dev.
+Nhược điểm:
+Image nặng → Docker image build ra cũng to hơn.
+Khởi động container chậm hơn Alpine một chút.
+
+VNC
+VNC (Virtual Network Computing) là một giao thức cho phép bạn điều khiển máy tính từ xa thông qua giao diện đồ họa (GUI).
+Nó hoạt động dựa trên mô hình client – server:
+VNC Server: chạy trên máy muốn được điều khiển.
+VNC Client (Viewer): chạy trên máy điều khiển, hiển thị màn hình từ xa và gửi thao tác chuột/bàn phím.
+
+Cơ chế:
+VNC truyền dữ liệu màn hình (framebuffer) từ server → client.
+Đồng thời truyền thao tác chuột/bàn phím từ client → server.
+
+Điểm nổi bật:
+Đa nền tảng (Windows, Linux, macOS…).
+Giao tiếp qua giao thức RFB (Remote Frame Buffer).
+Thường chạy trên cổng 5900 (mặc định).

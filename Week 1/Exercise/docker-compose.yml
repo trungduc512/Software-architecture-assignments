@@ -1,0 +1,6 @@
+services:
+    ssh:
+        build: .
+        container_name: ssh_container
+        ports:
+            - "2222:22"
